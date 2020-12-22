@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="jumbotron">
+  <h1>Have a puppy that needs to be adopted?</h1>
+  <p>Add a new puppy with the form below:</p>
+  <form method="POST">
+      {# This hidden_tag is a CSRF security feature. #}
+      {{ form.hidden_tag() }}
+      {{ form.name.label }} {{ form.name() }}
+      {{ form.submit() }}
+  </form>
+  <img src="https://www.thedailytail.com/wp-content/uploads/2019/08/happy-dog.jpg" alt="image moved or deleted">
+</div>
+{% endblock %}
